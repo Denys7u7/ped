@@ -14,7 +14,7 @@ namespace capaPresentacion
 {
     public partial class CPLogin : Form
     {
-        CDUsuario user = new CDUsuario();
+        CDUsuario user;
         SqlDataReader leer;
         public int xClick = 0, yClick = 0;
 
@@ -39,7 +39,9 @@ namespace capaPresentacion
             leer = null;
             string error = "Datos erroneos. Vuelva a intentarlo";
             string nombre;
-            leer = user.logearse(txtEmail.Text, txtPass.Text);
+            user = new CDUsuario(txtEmail.Text, txtPass.Text);
+            
+            leer = user.logearse();
             
             //MessageBox.Show(leer.Read() == true ? "Se encontro el usuario" : "No se encontro el usuario");
             //Mensaje de error: 

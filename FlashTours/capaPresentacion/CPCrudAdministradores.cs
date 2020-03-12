@@ -7,26 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using capaDatos;
+using System.Data.SqlClient;
 
 namespace capaPresentacion
 {
-    public partial class CPMain : Form
+    public partial class CPCrudAdministradores : Form
     {
         public int xClick = 0, yClick = 0;
-        public CPMain(String nombre)
+        SqlDataReader leer;
+        public CPCrudAdministradores()
         {
             InitializeComponent();
-            lblNombre.Text = nombre;
-        }
-
-        private void CPMain_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -47,19 +39,21 @@ namespace capaPresentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void CPCrudAdministradores_Load(object sender, EventArgs e)
         {
-
+            mostrarCargos();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void mostrarCargos()
         {
-
-        }
-
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
+            CDCargos cargos = new CDCargos();
+            if (cargos.mostrar().Count != 0)
+            {
+                cmbCargos.DataSource = cargos.mostrar();
+                cmbCargos.ValueMember = "Id";
+                cmbCargos.DisplayMember = "Cargo";
+            }
+            
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDCargos.cs" />
     <Compile Include="CDConexion.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

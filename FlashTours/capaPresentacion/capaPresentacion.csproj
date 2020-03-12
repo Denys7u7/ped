@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPCrudAdministradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPCrudAdministradores.Designer.cs">
+      <DependentUpon>CPCrudAdministradores.cs</DependentUpon>
+    </Compile>
     <Compile Include="CPLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CPCrudAdministradores.resx">
+      <DependentUpon>CPCrudAdministradores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CPLogin.resx">
       <DependentUpon>CPLogin.cs</DependentUpon>
     </EmbeddedResource>
