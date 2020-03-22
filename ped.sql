@@ -133,13 +133,66 @@ create table viajes(
 	bus int foreign key references bus(id) not null
 );*/
 
-create table ticket(
+/*create table ticket(
 	id int identity primary key,
 	viaje int foreign key references viajes(id),
 	cliente int foreign key references usuarios(id),
 	codigo varchar(35)
 );
-go
+go*/
+
+/*Inicio Kevin y Rodrigo*/
+
+Create table Ruta(
+id_ruta int identity primary key,
+lugar varchar(200) not null,
+)
+
+Create table Destinos(
+id_destino int identity primary key,
+id_ruta int foreign key references Ruta(id_ruta),
+destino varchar(50)
+)
+
+create table Viajes(
+id_viaje int identity primary key,
+id_ruta int foreign key references Ruta(id_ruta),
+id_bus int foreign key references Bus(id_bus), 
+id_conductor int foreign key references Conductor(id_conductor), 
+viaje varchar(100) not null,
+fecha date not null,
+estado bit not null default 1 
+)
+
+
+CREATE SEQUENCE Cod_asiento
+AS smallint
+START WITH 1
+INCREMENT BY 1
+NO CYCLE
+NO CACHE
+
+GO
+
+create table asientos(
+id_asiento int identity primary key,
+id_viaje int foreign key references Viajes(id_viaje),
+id_Destino int not null default 0, --opcion de ir vacios 
+id_persona int not null default 0, --Opcion de ir vacios
+codigo_asiento char(5) NOT NULL DEFAULT 'AS' + RIGHT('00' + CAST(NEXT VALUE FOR Cod_asiento AS varchar), 3),
+)
+
+GO
+CREATE TRIGGER GenerarAsientos 
+ON Viajes
+AFTER  INSERT
+AS 
+BEGIN
+INSERT INTO asientos(id_viaje,id_Destino,id_persona) 
+SELECT id_viaje,0,0 from INSERTED
+END
+
+/*Fin Kevin y Rodrigo*/
 
 create proc logearse
 (
