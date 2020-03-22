@@ -9,7 +9,10 @@ create table cargos(
 	cargo varchar(35) not null
 );
 
-create table destinos(
+insert into cargos values('Administrador'),('Conductor'),('Cliente');
+
+
+/*create table destinos(
 	id int identity primary key,
 	destino varchar(50),
 	lejania int
@@ -23,18 +26,18 @@ create table rutas(
 create table estacionesRuta(
 	idRuta int foreign key references rutas(id),
 	idEstaciones int foreign key references destinos(id)
-);
+);*/
 
 
 create table usuarios(
 	id int identity primary key,
 	nombre varchar(50) not null,
 	apellido varchar(50) not null,
-	dui varchar(10) check(dui LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][-][0-9]'),
+	dui varchar(10) unique check(dui LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][-][0-9]'),
 	edad int not null check(edad > 17),
-	nacionalidad varchar(50) not null,
-	telefono varchar(9) check(telefono LIKE '[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'),
-	email varchar(50) check (email LIKE '%@%'),
+	--nacionalidad varchar(50) not null,
+	telefono varchar(9) unique check(telefono LIKE '[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'),
+	email varchar(50) null check (email LIKE '%@%'),
 	--CAMPO EMPLEADO
 	cargo int foreign key references cargos(id),
 	contrasenia varchar(35),
@@ -42,36 +45,79 @@ create table usuarios(
 	licencia varchar(17) check(licencia LIKE '[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][-][0-9]'),
 );
 
-insert into usuarios(nombre,apellido,dui,edad,nacionalidad,telefono,email,contrasenia) values
-('Denys','Cruz','12345678-9',20,'salvadoreño','7865-9863','dennys@gmail.com','12345');
+
+insert into usuarios(nombre,apellido,dui,edad,telefono,email,contrasenia,cargo) values
+('Denys','Cruz','12345678-9',20,'7865-9863','dennys@gmail.com','12345',1);
 go
 
+select * from usuarios;
 
 create table coloresBuses(
 	id int identity primary key,
 	color varchar(50)
 );
 
+insert into coloresBuses values ('Amarillo'),('Blanco'),('Aqua');
+
 create table marcasBuses(
 	id int identity primary key,
 	marca varchar(50)
 );
 
-create table clasificacionAsientos(
+insert into marcasBuses values ('Mercedes Benz'),('Toyota'),('Hyundai');
+
+/*create table clasificacionAsientos(
 	id int identity primary key,
 	clasificacion varchar(30) not null
-)
+)*/
 
 create table bus(
 	id int identity primary key,
-	placa varchar(8) check(placa LIKE 'AB%'),
+	placa varchar(8) unique check(placa LIKE 'AB%'),
 	color int foreign key references coloresBuses(id),
 	marca int foreign key references marcasBuses(id),
 	capacidad int,
 	caracteristicas varchar(500)
 );
+go
 
-create table asientos(
+
+insert into bus values ('AB1234',1,1,60,'Bonito');
+
+create proc insertarBus(
+@placa varchar(8), @color int, @marca int, @capacidad int, @caracteristicas varchar(500)
+) as
+begin
+	insert into bus values(@placa,@color,@marca,@capacidad,@caracteristicas);
+end;
+GO
+
+create proc modificarBus(
+@id int, @placa varchar(8), @color int, @marca int, @capacidad int, @caracteristicas varchar(500)
+) as
+begin
+	update bus set placa = @placa, color = @color, marca = @marca, capacidad = @capacidad, caracteristicas = @caracteristicas where id = @id;
+	--insert into bus values(@placa,@color,@marca,@capacidad,@caracteristicas);
+end;
+GO
+
+create proc eliminarBus(
+@id int
+) as
+begin
+	delete from bus where id = @id;
+end;
+GO
+
+create proc mostrarBus as
+begin
+	select bus.id, placa, coloresBuses.color, marcasBuses.marca, capacidad, caracteristicas from bus join coloresBuses on bus.color = coloresBuses.id
+	join marcasBuses on bus.marca = marcasBuses.id;
+end;
+GO
+
+
+/*create table asientos(
 	id int identity primary key,
 	bus int foreign key references bus(id) not null,
 	numero int not null,
@@ -85,7 +131,7 @@ create table viajes(
 	horaLlegada time,
 	ruta int foreign key references rutas(id) not null,
 	bus int foreign key references bus(id) not null
-);
+);*/
 
 create table ticket(
 	id int identity primary key,
