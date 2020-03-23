@@ -8,9 +8,10 @@ create table cargos(
 	id int identity primary key,
 	cargo varchar(35) not null
 );
+GO
 
 insert into cargos values('Administrador'),('Conductor'),('Cliente');
-
+GO
 
 /*create table destinos(
 	id int identity primary key,
@@ -44,28 +45,32 @@ create table usuarios(
 	--CAMPO CONDUCTOR
 	licencia varchar(17) check(licencia LIKE '[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][-][0-9]'),
 );
-
+GO
 
 insert into usuarios(nombre,apellido,dui,edad,telefono,email,contrasenia,cargo) values
 ('Denys','Cruz','12345678-9',20,'7865-9863','dennys@gmail.com','12345',1);
 go
 
 select * from usuarios;
+GO
 
 create table coloresBuses(
 	id int identity primary key,
 	color varchar(50)
 );
+GO
 
 insert into coloresBuses values ('Amarillo'),('Blanco'),('Aqua');
+GO
 
 create table marcasBuses(
 	id int identity primary key,
 	marca varchar(50)
 );
+GO
 
 insert into marcasBuses values ('Mercedes Benz'),('Toyota'),('Hyundai');
-
+GO
 /*create table clasificacionAsientos(
 	id int identity primary key,
 	clasificacion varchar(30) not null
@@ -83,6 +88,7 @@ go
 
 
 insert into bus values ('AB1234',1,1,60,'Bonito');
+GO
 
 create proc insertarBus(
 @placa varchar(8), @color int, @marca int, @capacidad int, @caracteristicas varchar(500)
@@ -190,7 +196,8 @@ AS
 BEGIN
 INSERT INTO asientos(id_viaje,id_Destino,id_persona) 
 SELECT id_viaje,0,0 from INSERTED
-END
+END;
+GO
 
 /*Fin Kevin y Rodrigo*/
 
@@ -212,11 +219,6 @@ begin
 end;
 GO
 
-exec psInsertarCargo 'Administrador';
-GO
-exec psInsertarCargo 'Conductor';
-GO
-
 
 create proc psMostrarCargos
 as
@@ -230,7 +232,7 @@ GO
 
 
 --Este proc seria para usuarios que no sean clientes
-create proc psInsertarUsuario(
+/*create proc psInsertarUsuario(
 	@nombre varchar(50),
 	@apellido varchar(50),
 	@dui varchar(10),
@@ -249,4 +251,4 @@ begin
 	insert into usuarios(nombre,apellido,dui,edad,nacionalidad,telefono,email,contrasenia,cargo) values
 	(@nombre,@apellido,@dui,@edad,@nacionalidad,@telefono,@email,@pass,@cargo);
 end;
-GO
+GO*/
