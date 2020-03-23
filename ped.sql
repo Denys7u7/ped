@@ -256,3 +256,58 @@ begin
 	(@nombre,@apellido,@dui,@edad,@nacionalidad,@telefono,@email,@pass,@cargo);
 end;
 GO*/
+
+
+/*PROCEDIMIENTOS ANDRES*/
+
+
+CREATE PROC MostrarConductores
+as
+SELECT usuarios.id as Id, usuarios.nombre AS Nombre, usuarios.apellido AS Apellido, usuarios.dui AS DUI, usuarios.edad AS Edad, usuarios.telefono AS Teléfono, usuarios.email AS Correo, usuarios.contrasenia as Contraseña, usuarios.licencia AS Licencia FROM usuarios where cargo = 2;
+go
+
+exec MostrarConductores;
+GO
+
+CREATE PROC InsertarConductores
+@nombre varchar(50),
+@apellido varchar(50),
+@dui varchar(10),
+@edad int,
+@telefono varchar(9),
+@email varchar(50),
+@pass varchar(35),
+@licencia varchar(17)
+AS
+INSERT INTO usuarios (nombre, apellido, dui, edad, telefono, email, cargo, contrasenia, licencia) 
+		VALUES (@nombre, @apellido, @dui, @edad, @telefono, @email, 2, @pass, @licencia)
+GO
+
+exec InsertarConductores 'Test', 'Test A', '11112222-9', 40, '1234-1234', 'test@gmail.com', '11111', '1234-666666-123-1';
+GO
+
+
+CREATE PROC EditarConductores
+@nombre varchar(50),
+@apellido varchar(50),
+@dui varchar(10),
+@edad int,
+@telefono varchar(9),
+@email varchar(50),
+@pass varchar(35),
+@licencia varchar(17),
+@id int
+AS
+UPDATE usuarios SET nombre=@nombre, apellido=@apellido, dui=@dui, edad=@edad, telefono=@telefono, email=@email, contrasenia=@pass, licencia=@licencia
+WHERE id=@id
+GO
+
+CREATE PROC EliminarConductores
+@id int
+AS
+DELETE FROM usuarios WHERE id = @id
+GO
+
+
+
+/*FIN PROC ANDRES*/

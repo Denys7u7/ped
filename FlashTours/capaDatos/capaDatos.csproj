@@ -44,6 +44,7 @@
     <Compile Include="CDBus.cs" />
     <Compile Include="CDCargos.cs" />
     <Compile Include="CDCliente.cs" />
+    <Compile Include="CDConductor.cs" />
     <Compile Include="CDConexion.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

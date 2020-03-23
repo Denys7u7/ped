@@ -359,7 +359,7 @@
             this.button1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(220, 60);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Usuarios";
+            this.button1.Text = "Conductores";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
