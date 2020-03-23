@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDAsientos.cs" />
     <Compile Include="CDBus.cs" />
     <Compile Include="CDCargos.cs" />
     <Compile Include="CDCliente.cs" />
+    <Compile Include="CDcola.cs" />
     <Compile Include="CDConductor.cs" />
     <Compile Include="CDConexion.cs" />
+    <Compile Include="CDnodo.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

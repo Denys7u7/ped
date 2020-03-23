@@ -48,7 +48,7 @@ create table usuarios(
 GO
 
 insert into usuarios(nombre,apellido,dui,edad,telefono,email,contrasenia,cargo) values
-('Denys','Cruz','12345678-9',20,'7865-9863','dennys@gmail.com','12345',1);
+('Kevin','Galdamez','12345678-9',20,'7845-6863','kevingaldamezxd@gmail.com','GM123',1);
 go
 
 select * from usuarios;
@@ -195,10 +195,21 @@ CREATE TRIGGER GenerarAsientos
 ON Viajes
 AFTER  INSERT
 AS 
+DECLARE @cnt INT = 0;
+DECLARE @B INT = 0;
+DECLARE @A INT = 0;
+
+SELECT  @B = id_bus FROM INSERTED
+SELECT @A = capacidad FROM Bus WHERE id_bus = @B
+PRINT @B
+PRINT @A
+
+WHILE @cnt < @A
 BEGIN
 INSERT INTO asientos(id_viaje,id_Destino,id_persona) 
 SELECT id_viaje,0,0 from INSERTED
-END;
+SET @cnt = @cnt + 1;
+END
 GO
 
 /*Fin Kevin y Rodrigo*/
@@ -311,3 +322,4 @@ GO
 
 
 /*FIN PROC ANDRES*/
+

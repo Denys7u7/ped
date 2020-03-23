@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace capaDatos
 {
@@ -13,7 +14,7 @@ namespace capaDatos
         private SqlCommand insert;
         private SqlConnection conexionInsert;
         private SqlConnection Conexion = new SqlConnection(@"Server=.\SQLExpress;DataBase=ped;" + "Trusted_Connection=True;MultipleActiveResultSets=true; Persist Security Info=True");
-
+        //private SqlConnection Conexion = new SqlConnection("Data Source=localhost;Initial Catalog=ped;password=kevinG5;Integrated Security=True");
         public SqlConnection AbrirConexion()
         {
             if (Conexion.State == ConnectionState.Closed)
@@ -55,6 +56,22 @@ namespace capaDatos
             {
 
             }
+        }
+
+        public void listbox(ListBox list, String query, CDcola cola)
+        {
+            SqlCommand comando = new SqlCommand(query, Conectar());
+            AbrirConexion();
+            SqlDataReader reader = comando.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    list.Items.Add(reader.GetString(1));
+                    cola.Encolar(reader.GetString(1));
+                }
+            }
+            CerrarConexion();
         }
     }
 }

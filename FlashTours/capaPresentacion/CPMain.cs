@@ -193,7 +193,7 @@ namespace capaPresentacion
 
         private void button6_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormAsientos(), sender);
+            OpenChildForm(new Forms.FormAsignacion(), sender);
         }
 
         private void button4_Click(object sender, EventArgs e)
