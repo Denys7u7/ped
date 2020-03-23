@@ -67,14 +67,15 @@ namespace capaPresentacion.Forms
                 try
                 {
                     mantenimiento.insertar(txtNombre.Text, txtApellidos.Text, txtDUI.Text, int.Parse(numericUpDown1.Value.ToString()), txtTelefono.Text);
+                    mostrarClientes();
+                    LimpiarCampos();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("El dui o el numero de telefono ya ha sido registrado", "Datos repetidos");
                     return;
                 }
-                mostrarClientes();
-                LimpiarCampos();
+                
             }
         }
 
@@ -90,13 +91,18 @@ namespace capaPresentacion.Forms
             {
                 MessageBox.Show("Existen campos vacíos, por favor llene todos los campos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
             else
             {
-                CDCliente.Actualizar(txtNombre.Text, txtApellidos.Text, txtDUI.Text, int.Parse(numericUpDown1.Value.ToString()), txtTelefono.Text, int.Parse(txtId.Text));
-                mostrarClientes();
-                LimpiarCampos();
+                try
+                {
+                    CDCliente.Actualizar(txtNombre.Text, txtApellidos.Text, txtDUI.Text, int.Parse(numericUpDown1.Value.ToString()), txtTelefono.Text, int.Parse(txtId.Text));
+                    mostrarClientes();
+                    LimpiarCampos();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("No se pudo actualizar la informacion del cliente", "Aviso");
+                }
             }
         }
 
@@ -119,12 +125,7 @@ namespace capaPresentacion.Forms
 
         private void dgvclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtId.Text = dgvclientes.CurrentRow.Cells[0].Value.ToString();
-            txtNombre.Text = dgvclientes.CurrentRow.Cells[1].Value.ToString();
-            txtApellidos.Text = dgvclientes.CurrentRow.Cells[2].Value.ToString();
-            txtDUI.Text = dgvclientes.CurrentRow.Cells[3].Value.ToString();
-            numericUpDown1.Text = dgvclientes.CurrentRow.Cells[4].Value.ToString();
-            txtTelefono.Text = dgvclientes.CurrentRow.Cells[5].Value.ToString();
+            
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -140,6 +141,16 @@ namespace capaPresentacion.Forms
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.noEspacios(e);
+        }
+
+        private void dgvclientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dgvclientes.CurrentRow.Cells[0].Value.ToString();
+            txtNombre.Text = dgvclientes.CurrentRow.Cells[1].Value.ToString();
+            txtApellidos.Text = dgvclientes.CurrentRow.Cells[2].Value.ToString();
+            txtDUI.Text = dgvclientes.CurrentRow.Cells[3].Value.ToString();
+            numericUpDown1.Text = dgvclientes.CurrentRow.Cells[4].Value.ToString();
+            txtTelefono.Text = dgvclientes.CurrentRow.Cells[5].Value.ToString();
         }
     }
 }

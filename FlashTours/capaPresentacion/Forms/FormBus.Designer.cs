@@ -96,28 +96,38 @@
             // 
             // btneliminar
             // 
+            this.btneliminar.BackColor = System.Drawing.Color.Red;
+            this.btneliminar.FlatAppearance.BorderSize = 0;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneliminar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
             this.btneliminar.Location = new System.Drawing.Point(287, 174);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(112, 37);
             this.btneliminar.TabIndex = 55;
             this.btneliminar.Text = "Eliminar";
-            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnmodificar
             // 
+            this.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnmodificar.FlatAppearance.BorderSize = 0;
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificar.ForeColor = System.Drawing.Color.White;
             this.btnmodificar.Location = new System.Drawing.Point(148, 174);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(112, 37);
             this.btnmodificar.TabIndex = 54;
             this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.UseVisualStyleBackColor = false;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnregistrar
             // 
+            this.btnregistrar.BackColor = System.Drawing.Color.Lime;
+            this.btnregistrar.FlatAppearance.BorderSize = 0;
             this.btnregistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnregistrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregistrar.Location = new System.Drawing.Point(19, 174);
@@ -125,7 +135,7 @@
             this.btnregistrar.Size = new System.Drawing.Size(112, 37);
             this.btnregistrar.TabIndex = 53;
             this.btnregistrar.Text = "Registrar";
-            this.btnregistrar.UseVisualStyleBackColor = true;
+            this.btnregistrar.UseVisualStyleBackColor = false;
             this.btnregistrar.Click += new System.EventHandler(this.btnregistrar_Click);
             // 
             // label5
@@ -179,6 +189,8 @@
             this.dgvBuses.Name = "dgvBuses";
             this.dgvBuses.Size = new System.Drawing.Size(811, 230);
             this.dgvBuses.TabIndex = 48;
+            this.dgvBuses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuses_CellClick);
+            this.dgvBuses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuses_CellContentClick);
             // 
             // txtCatacteristicas
             // 

@@ -147,6 +147,8 @@ create table viajes(
 );
 go*/
 
+
+
 /*Inicio Kevin y Rodrigo*/
 
 Create table Ruta(
@@ -200,6 +202,8 @@ END;
 GO
 
 /*Fin Kevin y Rodrigo*/
+
+
 
 create proc logearse
 (

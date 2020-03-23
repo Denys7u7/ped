@@ -50,34 +50,37 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(99, 265);
+            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(103, 122);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(97, 29);
             this.numericUpDown1.TabIndex = 47;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(98, 310);
+            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(388, 121);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Mask = "0000-0000";
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(164, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(164, 29);
             this.txtTelefono.TabIndex = 46;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtDUI
             // 
-            this.txtDUI.Location = new System.Drawing.Point(98, 221);
+            this.txtDUI.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDUI.Location = new System.Drawing.Point(652, 77);
             this.txtDUI.Margin = new System.Windows.Forms.Padding(2);
             this.txtDUI.Mask = "00000000-0";
             this.txtDUI.Name = "txtDUI";
-            this.txtDUI.Size = new System.Drawing.Size(162, 20);
+            this.txtDUI.Size = new System.Drawing.Size(162, 29);
             this.txtDUI.TabIndex = 45;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(98, 94);
+            this.txtId.Location = new System.Drawing.Point(12, 12);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(51, 20);
             this.txtId.TabIndex = 44;
@@ -85,17 +88,19 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(98, 172);
+            this.txtApellidos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidos.Location = new System.Drawing.Point(390, 77);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(162, 20);
+            this.txtApellidos.Size = new System.Drawing.Size(162, 29);
             this.txtApellidos.TabIndex = 43;
             this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(99, 127);
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(103, 77);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(162, 20);
+            this.txtNombre.Size = new System.Drawing.Size(162, 29);
             this.txtNombre.TabIndex = 42;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -103,7 +108,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 310);
+            this.label6.Location = new System.Drawing.Point(310, 124);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 21);
             this.label6.TabIndex = 41;
@@ -113,7 +118,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 217);
+            this.label3.Location = new System.Drawing.Point(592, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 21);
             this.label3.TabIndex = 40;
@@ -121,45 +126,52 @@
             // 
             // btneliminar
             // 
+            this.btneliminar.BackColor = System.Drawing.Color.Red;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneliminar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.Location = new System.Drawing.Point(667, 384);
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.Location = new System.Drawing.Point(324, 193);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(112, 37);
             this.btneliminar.TabIndex = 39;
             this.btneliminar.Text = "Eliminar";
-            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.UseVisualStyleBackColor = false;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnmodificar
             // 
+            this.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificar.Location = new System.Drawing.Point(516, 384);
+            this.btnmodificar.ForeColor = System.Drawing.Color.White;
+            this.btnmodificar.Location = new System.Drawing.Point(169, 193);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(112, 37);
             this.btnmodificar.TabIndex = 38;
             this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.UseVisualStyleBackColor = false;
             this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnregistrar
             // 
+            this.btnregistrar.BackColor = System.Drawing.Color.Lime;
+            this.btnregistrar.FlatAppearance.BorderSize = 0;
             this.btnregistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnregistrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnregistrar.Location = new System.Drawing.Point(369, 384);
+            this.btnregistrar.ForeColor = System.Drawing.Color.Black;
+            this.btnregistrar.Location = new System.Drawing.Point(12, 193);
             this.btnregistrar.Name = "btnregistrar";
             this.btnregistrar.Size = new System.Drawing.Size(112, 37);
             this.btnregistrar.TabIndex = 37;
             this.btnregistrar.Text = "Registrar";
-            this.btnregistrar.UseVisualStyleBackColor = true;
+            this.btnregistrar.UseVisualStyleBackColor = false;
             this.btnregistrar.Click += new System.EventHandler(this.btnregistrar_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 260);
+            this.label5.Location = new System.Drawing.Point(23, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 21);
             this.label5.TabIndex = 36;
@@ -169,7 +181,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 168);
+            this.label1.Location = new System.Drawing.Point(310, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 35;
@@ -179,7 +191,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 122);
+            this.label2.Location = new System.Drawing.Point(22, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 21);
             this.label2.TabIndex = 34;
@@ -190,7 +202,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(91, 42);
+            this.label4.Location = new System.Drawing.Point(344, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 40);
             this.label4.TabIndex = 33;
@@ -199,17 +211,21 @@
             // dgvclientes
             // 
             this.dgvclientes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvclientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvclientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvclientes.Location = new System.Drawing.Point(333, 80);
+            this.dgvclientes.Location = new System.Drawing.Point(12, 236);
             this.dgvclientes.Name = "dgvclientes";
-            this.dgvclientes.Size = new System.Drawing.Size(479, 276);
+            this.dgvclientes.Size = new System.Drawing.Size(812, 215);
             this.dgvclientes.TabIndex = 32;
+            this.dgvclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellClick);
             this.dgvclientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellContentClick);
             // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(835, 463);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.txtTelefono);
