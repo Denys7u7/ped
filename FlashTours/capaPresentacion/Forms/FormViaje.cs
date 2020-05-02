@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace capaPresentacion.Forms
 {
-    public partial class FormAsientos : Form
+    public partial class FormViaje : Form
     {
-        public FormAsientos()
+        public FormViaje()
         {
             InitializeComponent();
         }

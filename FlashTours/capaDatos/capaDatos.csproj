@@ -50,6 +50,7 @@
     <Compile Include="CDConexion.cs" />
     <Compile Include="CDnodo.cs" />
     <Compile Include="CDUsuario.cs" />
+    <Compile Include="CDViajes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

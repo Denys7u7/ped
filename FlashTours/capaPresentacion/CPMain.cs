@@ -79,7 +79,7 @@ namespace capaPresentacion
                 }
             }
         }
-        private void OpenChildForm(Form childForm, object btnSender)
+        public void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -204,6 +204,21 @@ namespace capaPresentacion
         private void button3_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormBus(), sender);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormCreateViaje(), sender);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)

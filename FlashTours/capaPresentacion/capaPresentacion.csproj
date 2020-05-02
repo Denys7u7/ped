@@ -64,12 +64,6 @@
     <Compile Include="CPMain.Designer.cs">
       <DependentUpon>CPMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAsientos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormAsientos.Designer.cs">
-      <DependentUpon>FormAsientos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormAsignacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,11 +82,23 @@
     <Compile Include="Forms\FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormCreateViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCreateViaje.Designer.cs">
+      <DependentUpon>FormCreateViaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormViaje.Designer.cs">
+      <DependentUpon>FormViaje.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,9 +113,6 @@
     <EmbeddedResource Include="CPMain.resx">
       <DependentUpon>CPMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAsientos.resx">
-      <DependentUpon>FormAsientos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAsignacion.resx">
       <DependentUpon>FormAsignacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,8 +122,14 @@
     <EmbeddedResource Include="Forms\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCreateViaje.resx">
+      <DependentUpon>FormCreateViaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormViaje.resx">
+      <DependentUpon>FormViaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -13,8 +13,8 @@ namespace capaDatos
     {
         private SqlCommand insert;
         private SqlConnection conexionInsert;
-        private SqlConnection Conexion = new SqlConnection(@"Server=.\SQLExpress;DataBase=ped;" + "Trusted_Connection=True;MultipleActiveResultSets=true; Persist Security Info=True");
-        //private SqlConnection Conexion = new SqlConnection("Data Source=localhost;Initial Catalog=ped;password=kevinG5;Integrated Security=True");
+        //private SqlConnection Conexion = new SqlConnection(@"Server=.\SQLExpress;DataBase=ped;" + "Trusted_Connection=True;MultipleActiveResultSets=true; Persist Security Info=True");
+        private SqlConnection Conexion = new SqlConnection("Data Source=localhost;Initial Catalog=ped;password=kevinG5;Integrated Security=True");
         public SqlConnection AbrirConexion()
         {
             if (Conexion.State == ConnectionState.Closed)

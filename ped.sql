@@ -29,7 +29,7 @@ create table estacionesRuta(
 	idEstaciones int foreign key references destinos(id)
 );*/
 
-
+SELECT id,nombre FROM usuarios WHERE licencia <> ''
 create table usuarios(
 	id int identity primary key,
 	nombre varchar(50) not null,
@@ -47,8 +47,8 @@ create table usuarios(
 );
 GO
 
-insert into usuarios(nombre,apellido,dui,edad,telefono,email,contrasenia,cargo) values
-('Kevin','Galdamez','12345678-9',20,'7845-6863','kevingaldamezxd@gmail.com','GM123',1);
+insert into usuarios(nombre,apellido,dui,edad,telefono,email,cargo,contrasenia) values
+('Kevin','Galdamez','12345678-9',20,'7845-6863','kevingaldamezxd@gmail.com',1,'GM123');
 go
 
 select * from usuarios;
@@ -159,20 +159,21 @@ lugar varchar(200) not null,
 Create table Destinos(
 id_destino int identity primary key,
 id_ruta int foreign key references Ruta(id_ruta),
-destino varchar(50)
+destino1 varchar(50),
+destino2 varchar(50),
+destino3 varchar(50)
 )
 
 create table Viajes(
 id_viaje int identity primary key,
 id_ruta int foreign key references Ruta(id_ruta),
-id_bus int foreign key references Bus(id_bus), 
-id_conductor int foreign key references Conductor(id_conductor), 
+id_bus int foreign key references Bus(id), 
+id_conductor int foreign key references usuarios(id), 
 viaje varchar(100) not null,
-fecha date not null,
+fecha smalldatetime not null,
 estado bit not null default 1 
 )
-
-
+GO
 CREATE SEQUENCE Cod_asiento
 AS smallint
 START WITH 1
@@ -200,7 +201,7 @@ DECLARE @B INT = 0;
 DECLARE @A INT = 0;
 
 SELECT  @B = id_bus FROM INSERTED
-SELECT @A = capacidad FROM Bus WHERE id_bus = @B
+SELECT @A = capacidad FROM Bus WHERE id = @B
 PRINT @B
 PRINT @A
 
@@ -212,8 +213,18 @@ SET @cnt = @cnt + 1;
 END
 GO
 
-/*Fin Kevin y Rodrigo*/
 
+create proc InsertRuta(
+@ruta varchar(100)
+)as
+begin
+INSERT INTO Ruta VALUES(@ruta);
+SELECT SCOPE_IDENTITY();
+
+end
+go
+
+/*Fin Kevin y Rodrigo*/
 
 
 create proc logearse

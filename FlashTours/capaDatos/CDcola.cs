@@ -35,7 +35,7 @@ namespace capaDatos
         }
         public void Desencolar()
         {
-            if (primero == null) MessageBox.Show("CDcola vacia");
+            if (primero == null) MessageBox.Show("cola vacia");
             else primero = primero.sgte;
         }
         public Object DesenCDcolarValor()
@@ -52,7 +52,7 @@ namespace capaDatos
 
         public void Mostrar()
         {
-            if (primero == null) MessageBox.Show("CDcola vacia");
+            if (primero == null) MessageBox.Show("cola vacia");
             else
             {
                 CDnodo puntero;
