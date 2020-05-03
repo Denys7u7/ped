@@ -18,7 +18,7 @@ namespace capaPresentacion.Forms
         public FormCreateViaje()
         {
             InitializeComponent();
-            btnsiguiente.Enabled = false;
+            //btnsiguiente.Enabled = false;
             cmbBus.Items.Clear();
             cmbConductor.Items.Clear();
             viajes.comboBus(cmbBus);
@@ -53,7 +53,7 @@ namespace capaPresentacion.Forms
                                                     if (viajes.InsertarViaje())
                                                     {
                                                         MessageBox.Show("Viaje ingresado");
-                                                        activarBoton();
+                                                       // activarBoton();
                                                     }
                                                 }
                                             }
@@ -101,11 +101,11 @@ namespace capaPresentacion.Forms
             }
         }
            
-        public void activarBoton()
+        /*public void activarBoton()
         {
             btnregistrar.Enabled = false;
             btnsiguiente.Enabled = true;
-        }
+        }*/
         private void cmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -113,7 +113,7 @@ namespace capaPresentacion.Forms
 
         private void btnsiguiente_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormCreateViaje(), sender);
+            //OpenChildForm(new Forms.FormCreateViaje(), sender);
         }
     }
 }
