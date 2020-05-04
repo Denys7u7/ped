@@ -15,10 +15,12 @@ namespace capaPresentacion.Forms
     public partial class FormCreateViaje : Form
     {
         CDViajes viajes = new CDViajes();
+        int idViaje;
+        string nombreViaje,destino1,destino2,destino3;
         public FormCreateViaje()
         {
             InitializeComponent();
-            //btnsiguiente.Enabled = false;
+            btnsiguiente.Enabled = false;
             cmbBus.Items.Clear();
             cmbConductor.Items.Clear();
             viajes.comboBus(cmbBus);
@@ -52,8 +54,14 @@ namespace capaPresentacion.Forms
                                                 {
                                                     if (viajes.InsertarViaje())
                                                     {
+                                                       idViaje = viajes.Id;
+                                                        nombreViaje = viajes.Viajes;
+                                                        destino1 = viajes.Destino1;
+                                                        destino2 = viajes.Destino2;
+                                                        destino3 = viajes.Destino3;
+
                                                         MessageBox.Show("Viaje ingresado");
-                                                       // activarBoton();
+                                                       activarBoton();
                                                     }
                                                 }
                                             }
@@ -101,19 +109,32 @@ namespace capaPresentacion.Forms
             }
         }
            
-        /*public void activarBoton()
+        public void activarBoton()
         {
             btnregistrar.Enabled = false;
             btnsiguiente.Enabled = true;
-        }*/
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void cmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void btnsiguiente_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new Forms.FormCreateViaje(), sender);
+            FormAsientos formAsientos = new FormAsientos(idViaje, nombreViaje,destino1,destino2,destino3);
+            AddOwnedForm(formAsientos);
+            formAsientos.ShowDialog();
+        }
+
+        private void FormCreateViaje_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

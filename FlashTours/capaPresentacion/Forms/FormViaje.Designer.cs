@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.btneliminar = new System.Windows.Forms.Button();
-            this.btnmodificar = new System.Windows.Forms.Button();
             this.btnregistrar = new System.Windows.Forms.Button();
-            this.dgvBuses = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBuses)).BeginInit();
+            this.dgvViajes = new System.Windows.Forms.DataGridView();
+            this.cmbViajes = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViajes)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -41,78 +41,74 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(352, 25);
+            this.label4.Location = new System.Drawing.Point(303, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 40);
+            this.label4.Size = new System.Drawing.Size(235, 40);
             this.label4.TabIndex = 50;
-            this.label4.Text = "Viajes";
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.Red;
-            this.btneliminar.FlatAppearance.BorderSize = 0;
-            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btneliminar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Location = new System.Drawing.Point(481, 90);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(112, 37);
-            this.btneliminar.TabIndex = 59;
-            this.btneliminar.Text = "Cancelar Viaje";
-            this.btneliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnmodificar
-            // 
-            this.btnmodificar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnmodificar.FlatAppearance.BorderSize = 0;
-            this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmodificar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmodificar.ForeColor = System.Drawing.Color.White;
-            this.btnmodificar.Location = new System.Drawing.Point(342, 90);
-            this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.Size = new System.Drawing.Size(112, 37);
-            this.btnmodificar.TabIndex = 58;
-            this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.UseVisualStyleBackColor = false;
+            this.label4.Text = "Asignar personas";
             // 
             // btnregistrar
             // 
-            this.btnregistrar.BackColor = System.Drawing.Color.Lime;
+            this.btnregistrar.BackColor = System.Drawing.Color.Green;
             this.btnregistrar.FlatAppearance.BorderSize = 0;
             this.btnregistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnregistrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnregistrar.Location = new System.Drawing.Point(213, 90);
+            this.btnregistrar.ForeColor = System.Drawing.Color.White;
+            this.btnregistrar.Location = new System.Drawing.Point(12, 136);
             this.btnregistrar.Name = "btnregistrar";
             this.btnregistrar.Size = new System.Drawing.Size(112, 37);
             this.btnregistrar.TabIndex = 57;
-            this.btnregistrar.Text = "Ingresar viaje";
+            this.btnregistrar.Text = "Elegir Viaje";
             this.btnregistrar.UseVisualStyleBackColor = false;
+            this.btnregistrar.Click += new System.EventHandler(this.btnregistrar_Click);
             // 
-            // dgvBuses
+            // dgvViajes
             // 
-            this.dgvBuses.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvBuses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBuses.BackgroundColor = System.Drawing.Color.White;
-            this.dgvBuses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBuses.Location = new System.Drawing.Point(12, 150);
-            this.dgvBuses.Name = "dgvBuses";
-            this.dgvBuses.Size = new System.Drawing.Size(811, 301);
-            this.dgvBuses.TabIndex = 56;
+            this.dgvViajes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvViajes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvViajes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvViajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViajes.Location = new System.Drawing.Point(12, 191);
+            this.dgvViajes.Name = "dgvViajes";
+            this.dgvViajes.Size = new System.Drawing.Size(811, 211);
+            this.dgvViajes.TabIndex = 56;
+            // 
+            // cmbViajes
+            // 
+            this.cmbViajes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbViajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbViajes.FormattingEnabled = true;
+            this.cmbViajes.Location = new System.Drawing.Point(151, 146);
+            this.cmbViajes.Name = "cmbViajes";
+            this.cmbViajes.Size = new System.Drawing.Size(268, 21);
+            this.cmbViajes.TabIndex = 58;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label1.Location = new System.Drawing.Point(147, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 21);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "Seleccionar viaje";
             // 
             // FormViaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 463);
-            this.Controls.Add(this.btneliminar);
-            this.Controls.Add(this.btnmodificar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbViajes);
             this.Controls.Add(this.btnregistrar);
-            this.Controls.Add(this.dgvBuses);
+            this.Controls.Add(this.dgvViajes);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormViaje";
             this.Text = "FormViaje";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBuses)).EndInit();
+            this.Load += new System.EventHandler(this.FormViaje_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViajes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,9 +117,9 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btneliminar;
-        private System.Windows.Forms.Button btnmodificar;
         private System.Windows.Forms.Button btnregistrar;
-        private System.Windows.Forms.DataGridView dgvBuses;
+        private System.Windows.Forms.DataGridView dgvViajes;
+        private System.Windows.Forms.ComboBox cmbViajes;
+        private System.Windows.Forms.Label label1;
     }
 }

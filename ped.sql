@@ -186,11 +186,15 @@ GO
 create table asientos(
 id_asiento int identity primary key,
 id_viaje int foreign key references Viajes(id_viaje),
-id_Destino int not null default 0, --opcion de ir vacios 
+Destino varchar(100) not null default 'NULL', --opcion de ir vacios 
+colorAsiento int not null default 0,--opcion de ir vacios
 id_persona int not null default 0, --Opcion de ir vacios
 codigo_asiento char(5) NOT NULL DEFAULT 'AS' + RIGHT('00' + CAST(NEXT VALUE FOR Cod_asiento AS varchar), 3),
 )
-
+/*select * from Viajes
+INSERT INTO Viajes VALUES(17,1,2,'supraa','2020-12-12 10:20:00',1)
+SELECT * FROM asientos
+UPDATE top(1) asientos SET Destino = 'destino2', colorAsiento = 2 WHERE id_viaje = 19 AND Destino = 'NULL'*/
 GO
 CREATE TRIGGER GenerarAsientos 
 ON Viajes
@@ -207,8 +211,8 @@ PRINT @A
 
 WHILE @cnt < @A
 BEGIN
-INSERT INTO asientos(id_viaje,id_Destino,id_persona) 
-SELECT id_viaje,0,0 from INSERTED
+INSERT INTO asientos(id_viaje) 
+SELECT id_viaje from INSERTED
 SET @cnt = @cnt + 1;
 END
 GO

@@ -64,6 +64,12 @@
     <Compile Include="CPMain.Designer.cs">
       <DependentUpon>CPMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormAsientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAsientos.Designer.cs">
+      <DependentUpon>FormAsientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAsignacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPMain.resx">
       <DependentUpon>CPMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAsientos.resx">
+      <DependentUpon>FormAsientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAsignacion.resx">
       <DependentUpon>FormAsignacion.cs</DependentUpon>

@@ -191,10 +191,6 @@ namespace capaPresentacion
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.FormAsignacion(), sender);
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -218,7 +214,7 @@ namespace capaPresentacion
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Forms.FormViaje(), sender);
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)

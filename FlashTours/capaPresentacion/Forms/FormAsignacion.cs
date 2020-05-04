@@ -23,7 +23,7 @@ namespace capaPresentacion.Forms
         CDAsientos asientos = new CDAsientos();
         int[] AsientosN = new int[36];
         int contadorD1 = 0, contadorD2 =0, contadorD3 =0;
-        public FormAsignacion()
+        public FormAsignacion(int idViaje)
         {
             InitializeComponent();
 
@@ -182,6 +182,11 @@ namespace capaPresentacion.Forms
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void button37_Click(object sender, EventArgs e)
