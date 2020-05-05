@@ -209,7 +209,7 @@ namespace capaPresentacion
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Forms.FormTickets(), sender); 
         }
 
         private void button6_Click_1(object sender, EventArgs e)

@@ -178,9 +178,8 @@ CREATE SEQUENCE Cod_asiento
 AS smallint
 START WITH 1
 INCREMENT BY 1
-NO CYCLE
 NO CACHE
-
+NO CYCLE
 GO
 
 create table asientos(
@@ -191,8 +190,10 @@ colorAsiento int not null default 0,--opcion de ir vacios
 id_persona int not null default 0, --Opcion de ir vacios
 codigo_asiento char(5) NOT NULL DEFAULT 'AS' + RIGHT('00' + CAST(NEXT VALUE FOR Cod_asiento AS varchar), 3),
 )
-/*select * from Viajes
-INSERT INTO Viajes VALUES(17,1,2,'supraa','2020-12-12 10:20:00',1)
+
+/*select viaje,Destino,(nombre + apellido) as nombrecompleto,codigo_asiento from asientos A INNER JOIN Viajes V ON A.id_viaje = V.id_viaje INNER JOIN usuarios US ON A.id_persona = US.id WHERE A.id_viaje = 27 AND A.id_persona <> 0
+select * from Viajes
+INSERT INTO Viajes VALUES(17,1,2,'suprx','2020-12-12 10:20:00',1)
 SELECT * FROM asientos
 UPDATE top(1) asientos SET Destino = 'destino2', colorAsiento = 2 WHERE id_viaje = 19 AND Destino = 'NULL'*/
 GO
