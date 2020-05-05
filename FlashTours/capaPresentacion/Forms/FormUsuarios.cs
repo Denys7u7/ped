@@ -14,6 +14,7 @@ namespace capaPresentacion.Forms
     public partial class FormUsuarios : Form
     {
         CDConductor conductorCD = new CDConductor();
+        ValidacionesC v = new ValidacionesC();
         private string idConductor = null;
         private bool Editar = false;
         public FormUsuarios()
@@ -145,6 +146,36 @@ namespace capaPresentacion.Forms
             {
                 MessageBox.Show("Seleccione una fila para eliminar");
             }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.noEspacios(e);
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloLetras(e);
+        }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumeros(e);
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloLetras(e);
+        }
+
+        private void txtLicencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.noEspacios(e);
+        }
+
+        private void txtDUI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.noEspacios(e);
         }
     }
 }

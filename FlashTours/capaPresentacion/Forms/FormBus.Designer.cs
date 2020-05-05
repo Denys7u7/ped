@@ -50,37 +50,46 @@
             // 
             // nmCapacidad
             // 
+            this.nmCapacidad.Enabled = false;
             this.nmCapacidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nmCapacidad.Location = new System.Drawing.Point(730, 59);
-            this.nmCapacidad.Margin = new System.Windows.Forms.Padding(2);
+            this.nmCapacidad.Location = new System.Drawing.Point(973, 73);
+            this.nmCapacidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nmCapacidad.Name = "nmCapacidad";
-            this.nmCapacidad.Size = new System.Drawing.Size(60, 29);
+            this.nmCapacidad.Size = new System.Drawing.Size(80, 34);
             this.nmCapacidad.TabIndex = 62;
+            this.nmCapacidad.Value = new decimal(new int[] {
+            36,
+            0,
+            0,
+            0});
             // 
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(3, 1);
+            this.txtId.Location = new System.Drawing.Point(4, 1);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(51, 29);
+            this.txtId.Size = new System.Drawing.Size(67, 34);
             this.txtId.TabIndex = 60;
             this.txtId.Visible = false;
             // 
             // txtPlaca
             // 
             this.txtPlaca.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlaca.Location = new System.Drawing.Point(98, 58);
+            this.txtPlaca.Location = new System.Drawing.Point(131, 71);
+            this.txtPlaca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(129, 29);
+            this.txtPlaca.Size = new System.Drawing.Size(171, 34);
             this.txtPlaca.TabIndex = 58;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(283, 108);
+            this.label6.Location = new System.Drawing.Point(377, 133);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 21);
+            this.label6.Size = new System.Drawing.Size(136, 28);
             this.label6.TabIndex = 57;
             this.label6.Text = "Caracteristicas";
             // 
@@ -88,9 +97,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 108);
+            this.label3.Location = new System.Drawing.Point(20, 133);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 21);
+            this.label3.Size = new System.Drawing.Size(66, 28);
             this.label3.TabIndex = 56;
             this.label3.Text = "Marca";
             // 
@@ -101,9 +111,10 @@
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneliminar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Location = new System.Drawing.Point(287, 174);
+            this.btneliminar.Location = new System.Drawing.Point(383, 214);
+            this.btneliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(112, 37);
+            this.btneliminar.Size = new System.Drawing.Size(149, 46);
             this.btneliminar.TabIndex = 55;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = false;
@@ -116,9 +127,10 @@
             this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmodificar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmodificar.ForeColor = System.Drawing.Color.White;
-            this.btnmodificar.Location = new System.Drawing.Point(148, 174);
+            this.btnmodificar.Location = new System.Drawing.Point(197, 214);
+            this.btnmodificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.Size = new System.Drawing.Size(112, 37);
+            this.btnmodificar.Size = new System.Drawing.Size(149, 46);
             this.btnmodificar.TabIndex = 54;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = false;
@@ -130,9 +142,10 @@
             this.btnregistrar.FlatAppearance.BorderSize = 0;
             this.btnregistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnregistrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnregistrar.Location = new System.Drawing.Point(19, 174);
+            this.btnregistrar.Location = new System.Drawing.Point(25, 214);
+            this.btnregistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnregistrar.Name = "btnregistrar";
-            this.btnregistrar.Size = new System.Drawing.Size(112, 37);
+            this.btnregistrar.Size = new System.Drawing.Size(149, 46);
             this.btnregistrar.TabIndex = 53;
             this.btnregistrar.Text = "Registrar";
             this.btnregistrar.UseVisualStyleBackColor = false;
@@ -142,9 +155,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(621, 61);
+            this.label5.Location = new System.Drawing.Point(828, 75);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 21);
+            this.label5.Size = new System.Drawing.Size(104, 28);
             this.label5.TabIndex = 52;
             this.label5.Text = "Capacidad";
             // 
@@ -152,9 +166,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(345, 61);
+            this.label1.Location = new System.Drawing.Point(460, 75);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 21);
+            this.label1.Size = new System.Drawing.Size(60, 28);
             this.label1.TabIndex = 51;
             this.label1.Text = "Color";
             // 
@@ -162,9 +177,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 61);
+            this.label2.Location = new System.Drawing.Point(20, 75);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 21);
+            this.label2.Size = new System.Drawing.Size(57, 28);
             this.label2.TabIndex = 50;
             this.label2.Text = "Placa";
             // 
@@ -173,9 +189,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(342, 9);
+            this.label4.Location = new System.Drawing.Point(456, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 40);
+            this.label4.Size = new System.Drawing.Size(115, 50);
             this.label4.TabIndex = 49;
             this.label4.Text = "Buses";
             // 
@@ -185,9 +202,10 @@
             this.dgvBuses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBuses.BackgroundColor = System.Drawing.Color.White;
             this.dgvBuses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBuses.Location = new System.Drawing.Point(12, 221);
+            this.dgvBuses.Location = new System.Drawing.Point(16, 272);
+            this.dgvBuses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvBuses.Name = "dgvBuses";
-            this.dgvBuses.Size = new System.Drawing.Size(811, 230);
+            this.dgvBuses.Size = new System.Drawing.Size(1081, 283);
             this.dgvBuses.TabIndex = 48;
             this.dgvBuses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuses_CellClick);
             this.dgvBuses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuses_CellContentClick);
@@ -195,36 +213,39 @@
             // txtCatacteristicas
             // 
             this.txtCatacteristicas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCatacteristicas.Location = new System.Drawing.Point(430, 105);
+            this.txtCatacteristicas.Location = new System.Drawing.Point(573, 129);
+            this.txtCatacteristicas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCatacteristicas.Multiline = true;
             this.txtCatacteristicas.Name = "txtCatacteristicas";
-            this.txtCatacteristicas.Size = new System.Drawing.Size(393, 106);
+            this.txtCatacteristicas.Size = new System.Drawing.Size(523, 130);
             this.txtCatacteristicas.TabIndex = 63;
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(98, 105);
+            this.comboBox1.Location = new System.Drawing.Point(131, 129);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 29);
+            this.comboBox1.Size = new System.Drawing.Size(160, 36);
             this.comboBox1.TabIndex = 64;
             // 
             // comboBox2
             // 
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(430, 58);
+            this.comboBox2.Location = new System.Drawing.Point(573, 71);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 29);
+            this.comboBox2.Size = new System.Drawing.Size(160, 36);
             this.comboBox2.TabIndex = 65;
             // 
             // FormBus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(835, 463);
+            this.ClientSize = new System.Drawing.Size(1113, 570);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtCatacteristicas);
@@ -242,6 +263,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvBuses);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormBus";
             this.Text = "Administracion Buses";
             this.Load += new System.EventHandler(this.FormBus_Load);
