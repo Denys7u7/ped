@@ -58,7 +58,7 @@ namespace capaDatos
             }
         }
 
-        public void listbox(ListBox list, String query, CDcola cola)
+        public void listbox(ListBox list, String query, CDcola cola, CDcola nombres)
         {
             SqlCommand comando = new SqlCommand(query, Conectar());
             AbrirConexion();
@@ -68,7 +68,8 @@ namespace capaDatos
                 while (reader.Read())
                 {
                     list.Items.Add(reader.GetString(1));
-                    cola.Encolar(reader.GetString(1));
+                    nombres.Encolar(reader.GetString(1));
+                    cola.Encolar(reader.GetInt32(0));
                 }
             }
             CerrarConexion();

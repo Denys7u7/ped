@@ -26,6 +26,25 @@ namespace capaDatos
         public int IdPersona { get => idPersona; set => idPersona = value; }
         public string CodigoAsiento { get => codigoAsiento; set => codigoAsiento = value; }
 
+        public void consultarAsientos(CDcola colaColor)
+        {
+            string insert;
+            cn.AbrirConexion();
+            insert = "SELECT colorAsiento FROM asientos WHERE id_viaje = @idViaje";
+            SqlCommand insertar1;
+            insertar1 = new SqlCommand(insert, cn.AbrirConexion());
+            insertar1.Parameters.Add(new SqlParameter("@idViaje", SqlDbType.Int));
+            insertar1.Parameters["@idViaje"].Value = idViaje;
+            SqlDataAdapter mysqldt = new SqlDataAdapter(insertar1);
+            DataTable dt = new DataTable();
+            mysqldt.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                colaColor.Encolar(Convert.ToInt32(dr.Field<object>("colorAsiento")));
+            }
+            cn.CerrarConexion();
+        }
+
         public void AsignarAsiento()
         {
                 try
@@ -49,11 +68,56 @@ namespace capaDatos
                 MessageBox.Show("Error al ingresar" + ex);
             }           
         }
+
+        public void AsignarPersonas()
+        {
+            try
+            {
+                string insert;
+                cn.AbrirConexion();
+                insert = "UPDATE asientos SET id_persona = @idPersona WHERE id_viaje = @idViaje AND id_asiento = @idAsiento";
+                SqlCommand insertar1;
+                insertar1 = new SqlCommand(insert, cn.AbrirConexion());
+                insertar1.Parameters.Add(new SqlParameter("@idPersona", SqlDbType.Int));
+                insertar1.Parameters["@idPersona"].Value = idPersona;
+                insertar1.Parameters.Add(new SqlParameter("@idViaje", SqlDbType.Int));
+                insertar1.Parameters["@idViaje"].Value = idViaje;
+                insertar1.Parameters.Add(new SqlParameter("@idAsiento", SqlDbType.Int));
+                insertar1.Parameters["@idAsiento"].Value = id;
+                insertar1.ExecuteNonQuery();
+                cn.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ingresar" + ex);
+            }
+        }
+        public void consultarIdAsiento()
+        {
+            try
+            {
+                object idR;
+                string insert;
+                cn.AbrirConexion();
+                insert = "SELECT top(1) id_asiento FROM asientos WHERE id_viaje = @idViaje";
+                SqlCommand insertar1;
+                insertar1 = new SqlCommand(insert, cn.AbrirConexion());
+                insertar1.Parameters.Add(new SqlParameter("@idViaje", SqlDbType.Int));
+                insertar1.Parameters["@idViaje"].Value = idViaje;
+                idR = insertar1.ExecuteScalar();
+                id = Convert.ToInt32(idR);
+                cn.CerrarConexion();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo consultar el ID");
+            }
+        }
         public void comboViajes(ComboBox cmb)
         {
             string insert;
             cn.AbrirConexion();
-            insert = "SELECT id_viaje,viaje FROM viajes";
+            insert = "SELECT id_viaje,viaje FROM viajes WHERE estado = 1";
             SqlCommand insertar1;
             insertar1 = new SqlCommand(insert, cn.AbrirConexion());
             SqlDataAdapter mysqldt = new SqlDataAdapter(insertar1);
@@ -89,24 +153,14 @@ namespace capaDatos
             }
         }
 
-        public void asientosMetodo(int[] AsientosN)
-        {
 
-            for (int i = 0; i < AsientosN.Length; i++)
-            {
-                if (i <= 10) AsientosN[i] = 1;
-                if (i <= 24 && i > 10) AsientosN[i] = 2;
-                if (i <= 32 && i > 24) AsientosN[i] = 3;
-            }
-        }
-
-        public bool readClientes(ListBox lista, CDcola cola)
+        public bool readClientes(ListBox lista, CDcola cola,CDcola nombres)
         {
 
             try
             {
                 String sql = "SELECT U.id, (U.nombre+ ' ' +U.apellido) as Nombre FROM usuarios U  WHERE U.licencia IS NULL AND U.cargo = 3 AND U.contrasenia IS NULL";
-                cn.listbox(lista, sql, cola);
+                cn.listbox(lista, sql, cola,nombres);
                 return true;
             }
             catch (Exception e)

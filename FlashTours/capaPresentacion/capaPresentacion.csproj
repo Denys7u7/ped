@@ -94,6 +94,12 @@
     <Compile Include="Forms\FormCreateViaje.Designer.cs">
       <DependentUpon>FormCreateViaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTickets.Designer.cs">
+      <DependentUpon>FormTickets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCreateViaje.resx">
       <DependentUpon>FormCreateViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTickets.resx">
+      <DependentUpon>FormTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>

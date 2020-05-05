@@ -49,6 +49,7 @@
     <Compile Include="CDConductor.cs" />
     <Compile Include="CDConexion.cs" />
     <Compile Include="CDnodo.cs" />
+    <Compile Include="CDtickets.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="CDViajes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
