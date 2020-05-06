@@ -21,6 +21,7 @@ namespace capaPresentacion.Forms
 
 
         CDcola CDasientos = new CDcola();
+        //CDcola CDpeople = new CDcola();
     
         public int idViaje,idAsiento;
         int[,] AsientosN = new int[2,36];
@@ -32,9 +33,10 @@ namespace capaPresentacion.Forms
 
             this.idViaje = idViaje;
             ConsultarAsientos();
+            //comsultarPeople();
 
            listBox1.Items.Clear();
-            ConsultarClientes();
+            ConsultarClientes(idViaje);
 
 
             prueba();
@@ -46,6 +48,11 @@ namespace capaPresentacion.Forms
                 PersonasID[i] = 0;
             }
         }
+       /* public void comsultarPeople()
+        {
+            asientos.IdViaje = idViaje;
+            asientos.consultarPeople(CDpeople);
+        }*/
         public void ConsultarAsientos()
         {
             asientos.IdViaje = idViaje;
@@ -205,9 +212,9 @@ namespace capaPresentacion.Forms
             if (i == 36) ClienteAsignado(btnA36);
         }
 
-        public void ConsultarClientes()
+        public void ConsultarClientes(int idViajes)
         {
-            asientos.readClientes(listBox1, clientes, nombres);
+            asientos.readClientes(listBox1, clientes, nombres,idViajes);
         }
 
         private void button36_Click(object sender, EventArgs e)

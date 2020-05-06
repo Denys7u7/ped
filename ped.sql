@@ -39,6 +39,7 @@ create table usuarios(
 	--nacionalidad varchar(50) not null,
 	telefono varchar(9) unique check(telefono LIKE '[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'),
 	email varchar(50) null check (email LIKE '%@%'),
+	idviaje int null default 0,
 	--CAMPO EMPLEADO
 	cargo int foreign key references cargos(id),
 	contrasenia varchar(35),
@@ -46,6 +47,7 @@ create table usuarios(
 	licencia varchar(17) check(licencia LIKE '[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][-][0-9]'),
 );
 GO
+
 
 insert into usuarios(nombre,apellido,dui,edad,telefono,email,cargo,contrasenia) values
 ('Kevin','Galdamez','12345678-9',20,'7845-6863','kevingaldamezxd@gmail.com',1,'GM123');

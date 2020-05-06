@@ -58,11 +58,14 @@ namespace capaDatos
             }
         }
 
-        public void listbox(ListBox list, String query, CDcola cola, CDcola nombres)
+        public void listbox(ListBox list, String query, CDcola cola, CDcola nombres, int idViaje)
         {
-            SqlCommand comando = new SqlCommand(query, Conectar());
             AbrirConexion();
+            SqlCommand comando = new SqlCommand(query, Conectar());
+            comando.Parameters.Add(new SqlParameter("@idViaje", SqlDbType.Int));
+            comando.Parameters["@idViaje"].Value = idViaje;
             SqlDataReader reader = comando.ExecuteReader();
+
             if (reader.HasRows)
             {
                 while (reader.Read())

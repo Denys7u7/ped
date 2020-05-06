@@ -13,13 +13,14 @@ namespace capaPresentacion.Forms
 {
     public partial class FormClientes : Form
     {
-        
+        CDAsientos asientos = new CDAsientos();
         CDCliente mantenimiento = new CDCliente();
         ValidacionesC v = new ValidacionesC();
 
         public FormClientes()
         {
             InitializeComponent();
+            asientos.comboViajes(cmbViaje);
         }
 
         private void LoadTheme()
@@ -66,7 +67,7 @@ namespace capaPresentacion.Forms
             {
                 try
                 {
-                    mantenimiento.insertar(txtNombre.Text, txtApellidos.Text, txtDUI.Text, int.Parse(numericUpDown1.Value.ToString()), txtTelefono.Text);
+                    mantenimiento.insertar(txtNombre.Text, txtApellidos.Text, txtDUI.Text, int.Parse(numericUpDown1.Value.ToString()), txtTelefono.Text, Convert.ToInt32(cmbViaje.SelectedValue));
                     mostrarClientes();
                     LimpiarCampos();
                 }
@@ -95,7 +96,7 @@ namespace capaPresentacion.Forms
             {
                 try
                 {
-                    CDCliente.Actualizar(txtNombre.Text, txtApellidos.Text, txtDUI.Text, int.Parse(numericUpDown1.Value.ToString()), txtTelefono.Text, int.Parse(txtId.Text));
+                    CDCliente.Actualizar(txtNombre.Text, txtApellidos.Text, txtDUI.Text, int.Parse(numericUpDown1.Value.ToString()), txtTelefono.Text,Convert.ToInt32(cmbViaje.SelectedValue),int.Parse(txtId.Text));
                     mostrarClientes();
                     LimpiarCampos();
                 }

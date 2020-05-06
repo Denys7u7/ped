@@ -44,6 +44,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvclientes = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbViaje = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +112,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(310, 124);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 21);
+            this.label6.Size = new System.Drawing.Size(70, 21);
             this.label6.TabIndex = 41;
             this.label6.Text = "Teléfono";
             // 
@@ -221,12 +223,36 @@
             this.dgvclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellClick);
             this.dgvclientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellContentClick);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(592, 127);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 21);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Viaje";
+            // 
+            // cmbViaje
+            // 
+            this.cmbViaje.BackColor = System.Drawing.Color.Gainsboro;
+            this.cmbViaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbViaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbViaje.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbViaje.FormattingEnabled = true;
+            this.cmbViaje.Location = new System.Drawing.Point(652, 127);
+            this.cmbViaje.Name = "cmbViaje";
+            this.cmbViaje.Size = new System.Drawing.Size(162, 25);
+            this.cmbViaje.TabIndex = 49;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(835, 463);
+            this.Controls.Add(this.cmbViaje);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDUI);
@@ -272,5 +298,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvclientes;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbViaje;
     }
 }

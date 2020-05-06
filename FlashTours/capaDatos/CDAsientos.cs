@@ -45,6 +45,25 @@ namespace capaDatos
             cn.CerrarConexion();
         }
 
+        public void consultarPeople(CDcola colaPeople)
+        {
+            string insert;
+            cn.AbrirConexion();
+            insert = "SELECT id_persona FROM asientos WHERE id_viaje = @idViaje";
+            SqlCommand insertar1;
+            insertar1 = new SqlCommand(insert, cn.AbrirConexion());
+            insertar1.Parameters.Add(new SqlParameter("@idViaje", SqlDbType.Int));
+            insertar1.Parameters["@idViaje"].Value = idViaje;
+            SqlDataAdapter mysqldt = new SqlDataAdapter(insertar1);
+            DataTable dt = new DataTable();
+            mysqldt.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                colaPeople.Encolar(Convert.ToInt32(dr.Field<object>("id_persona")));
+            }
+            cn.CerrarConexion();
+        }
+
         public void AsignarAsiento()
         {
                 try
@@ -154,13 +173,13 @@ namespace capaDatos
         }
 
 
-        public bool readClientes(ListBox lista, CDcola cola,CDcola nombres)
+        public bool readClientes(ListBox lista, CDcola cola,CDcola nombres, int idViajes)
         {
 
             try
             {
-                String sql = "SELECT U.id, (U.nombre+ ' ' +U.apellido) as Nombre FROM usuarios U  WHERE U.licencia IS NULL AND U.cargo = 3 AND U.contrasenia IS NULL";
-                cn.listbox(lista, sql, cola,nombres);
+                String sql = "SELECT U.id, (U.nombre+ ' ' +U.apellido) as Nombre FROM usuarios U  WHERE U.licencia IS NULL AND U.cargo = 3 AND U.contrasenia IS NULL AND idviaje = @idViaje";
+                cn.listbox(lista, sql, cola,nombres,idViajes);
                 return true;
             }
             catch (Exception e)
